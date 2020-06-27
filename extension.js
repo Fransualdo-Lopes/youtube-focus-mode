@@ -1,9 +1,14 @@
-const intervalId = window.setInterval(() => {
-  const watchNextElements = document.querySelectorAll('div[class*="ytd-watch-next-"]');
-  if (watchNextElements.length > 0) {
-    window.clearInterval(intervalId);
-    watchNextElements.forEach(el => {
-      el.parentElement.removeChild(el);
-    });
-  }
-}, 50);
+const watchNextElements = document.querySelectorAll('div[class*="ytd-watch-next-"]');
+
+watchNextElements.forEach(el => {
+  el.parentElement.removeChild(el);
+});
+
+const grid = document.getElementsByTagName('ytd-rich-grid-renderer');
+for (let el of grid) {
+  el.parentElement.removeChild(el);
+}
+
+for (let el of document.querySelectorAll('ytd-shelf-renderer[class*="ytd-item-section-renderer"]')) {
+  el.parentElement.removeChild(el);
+}

@@ -19,6 +19,9 @@ function onPageChange() {
   for (let el of document.querySelectorAll('ytd-shelf-renderer[class*="ytd-item-section-renderer"]')) {
     el.parentElement.removeChild(el);
   }
+
+  const comments = document.getElementById('comments');
+  comments.parentElement.removeChild(comments);
   
 }
 
